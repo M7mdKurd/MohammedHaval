@@ -43,18 +43,16 @@ public class Main {
 
         }while(input1 != 'm');
 
-        System.out.print("\nNow Please enter (empty) for Ascending sorting: ");
+        System.out.print("\nNow Please enter (full) for Descending sorting: ");
         input2 = sc.next();
         System.out.println();
 
-
-        if(input2.equals("empty")){
-
+        if(input2.equals("full")){
             for(out = 1 ; out < num.length ; out++){
 
 
                 temp = num[out];
-                for (in = out - 1 ; (in >= 0 && num[in] > temp) ; in--) {
+                for (in = out - 1 ; (in >= 0 && num[in] < temp) ; in--) {
                     num[in+1] = num[in];
                 }
                 num[in+1] = temp;
@@ -63,9 +61,7 @@ public class Main {
             System.out.println("==Arrays After sorting==");
 
             displayArray(num);
-
-        }else
-            System.out.println("You did not click empty");
+        }
 
     }
 
